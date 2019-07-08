@@ -1,0 +1,22 @@
+version: '3'
+services:
+    controller:
+        image: 'kinogmt/centos-ssh'
+        volumes:
+            - ./extra/controller/ansible_test:/ansible_test
+              #            - ./extra/controller/etc/hosts:/etc/hosts
+              #            - ./extra/controller/etc/hostname:/etc/hostname
+        command: sh -c "yum -y install ansible ; service sshd start ; tail -f /dev/null"
+    target1:
+        image: 'kinogmt/centos-ssh'
+        #        volumes:
+        #    - ./extra/target1/etc/hosts:/etc/hosts
+        #    - ./extra/target1/etc/hostname:/etc/hostname
+        command: sh -c "service sshd start ; tail -f /dev/null"
+    target2:
+        image: 'kinogmt/centos-ssh'
+        #        volumes:
+        #    - ./extra/target1/etc/hosts:/etc/hosts
+        #    - ./extra/target1/etc/hostname:/etc/hostname
+        command: sh -c "service sshd start ; tail -f /dev/null"
+

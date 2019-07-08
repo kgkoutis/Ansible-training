@@ -1,0 +1,3 @@
+[submodule "ansible-training-answer-keys"]
+	path = ansible-training-answer-keys
+	url = https://github.com/mmumshad/ansible-training-answer-keys.git
